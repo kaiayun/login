@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>登入頁面</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+            background-color: #f3f4f6;
+            background-image: url('https://example.com/your-miyazaki-image.jpg'); /* 可替換為宮崎駿的圖片 */
+            background-size: cover;
+            background-position: center;
+        }
+        .login-container {
+            background: rgba(255, 255, 255, 0.8); /* 半透明背景 */
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            width: 300px;
+            text-align: center;
+            backdrop-filter: blur(10px); /* 模糊背景 */
+        }
+        .login-container h1 {
+            margin-bottom: 20px;
+            font-size: 24px;
+            color: #333333;
+            font-family: 'Arial', sans-serif;
+        }
+        .login-container input {
+            width: 100%;
+            padding: 10px;
+            margin: 10px 0;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+        }
+        .login-container button {
+            width: 100%;
+            padding: 10px;
+            background-color: #4CAF50;
+            color: white;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            font-size: 16px;
+        }
+        .login-container button:hover {
+            background-color: #45a049;
+        }
+        .error-message {
+            color: red;
+            font-size: 14px;
+            margin-top: 10px;
+        }
+        /* 宮崎駿風格的按鈕 */
+        .miyazaki-btn {
+            background-color: #ffb3b3;
+            color: #333;
+            font-family: 'Comic Sans MS', sans-serif;
+            font-size: 18px;
+            border-radius: 10px;
+            padding: 15px;
+            cursor: pointer;
+            border: none;
+        }
+        .miyazaki-btn:hover {
+            background-color: #ff8080;
+        }
+    </style>
+</head>
+<body>
+    <div class="login-container">
+        <h1>登入</h1>
+        <form id="loginForm">
+            <input type="text" id="username" placeholder="用戶名" required>
+            <input type="password" id="password" placeholder="密碼" required>
+            <button type="button" onclick="validateForm()">登入</button>
+            <button type="button" class="miyazaki-btn" onclick="alert('來自宮崎駿的問候！')">點我</button>
+            <p class="error-message" id="errorMessage"></p>
+        </form>
+    </div>
+
+    <script>
+        function validateForm() {
+            const username = document.getElementById('username').value;
+            const password = document.getElementById('password').value;
+            const errorMessage = document.getElementById('errorMessage');
+
+            if (!username || !password) {
+                errorMessage.textContent = '請填寫用戶名和密碼';
+                return;
+            }
+
+            if (username === 'yun' && password === '147369') {
+                alert('登入成功！');
+                errorMessage.textContent = '';
+                // 這裡可以跳轉到其他頁面或執行其他操作
+            } else {
+                errorMessage.textContent = '用戶名或密碼錯誤';
+            }
+        }
+    </script>
+</body>
+</html>
